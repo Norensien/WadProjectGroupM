@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="fighterInfo.xsl"?>
+
+<FIGHTERINFO>
+    
+    <FIGHT>
+        <TITLE>UFC FIGHT NIGHT 196</TITLE>
+        <FIGHTERS> THOMPSON VS VILLASECA</FIGHTERS>
+        <DATE>December 4, 2015</DATE>
+        <WEIGHT-CLASS>LightWeight</WEIGHT-CLASS>
+        <VENUE>Rogers Center</VENUE>
+    </FIGHT>
+
+    <FIGHT>
+        <TITLE>UFC FIGHT NIGHT 195</TITLE>
+        <FIGHTERS> VANZANT VS. NAMAJUNAS</FIGHTERS>
+        <DATE>December 10, 2015</DATE>
+        <WEIGHT-CLASS>StrawWeight</WEIGHT-CLASS>
+        <VENUE>Peral at the Palms Casino</VENUE>
+    </FIGHT>
+
+    <FIGHT>
+        <TITLE>UFC FIGHT NIGHT 194</TITLE>
+        <FIGHTERS> ALDO VS. MCGREGOR</FIGHTERS>
+        <DATE>December 12, 2015</DATE>
+        <WEIGHT-CLASS>FeatherWeight</WEIGHT-CLASS>
+        <VENUE>MGM Grand Garden Arena</VENUE>
+    </FIGHT>
+
+    <FIGHT>
+        <TITLE>UFC ON FOX 17</TITLE>
+        <FIGHTERS> THOMPSON VS VILLASECA</FIGHTERS>
+        <DATE>December 19, 2015</DATE>
+        <WEIGHT-CLASS>LightWeight</WEIGHT-CLASS>
+        <VENUE>MGM Grand Garden Arena</VENUE>
+    </FIGHT>
+
+</FIGHTERINFO><?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="fighterInfo.xsl"?>
+
+<FIGHTERINFO>
+    
+    <FIGHT>
+        <TITLE>UFC FIGHT NIGHT 196</TITLE>
+        <FIGHTERS> THOMPSON VS VILLASECA</FIGHTERS>
+        <DATE>December 4, 2015</DATE>
+        <WEIGHT-CLASS>LightWeight</WEIGHT-CLASS>
+        <VENUE>Rogers Center</VENUE>
+    </FIGHT>
+
+    <FIGHT>
+        <TITLE>UFC FIGHT NIGHt 195</TITLE>
+        <FIGHTERS> VANZANT VS. NAMAJUNAS</FIGHTERS>
+        <DATE>December 10, 2015</DATE>
+        <WEIGHT-CLASS>StrawWeight</WEIGHT-CLASS>
+        <VENUE>Peral at the Palms Casino</VENUE>
+    </FIGHT>
+
+    <FIGHT>
+        <TITLE>UFC FIGHT NIGHT 194</TITLE>
+        <FIGHTERS> ALDO VS. MCGREGOR</FIGHTERS>
+        <DATE>December 12, 2015</DATE>
+        <WEIGHT-CLASS>FeatherWeight</WEIGHT-CLASS>
+        <VENUE>MGM Grand Garden Arena</VENUE>
+    </FIGHT>
+
+    <FIGHT>
+        <TITLE>UFC ON FOX 17</TITLE>
+        <FIGHTERS> THOMPSON VS VILLASECA</FIGHTERS>
+        <DATE>December 19, 2015</DATE>
+        <WEIGHT-CLASS>LightWeight</WEIGHT-CLASS>
+        <VENUE>MGM Grand Garden Arena</VENUE>
+    </FIGHT>
+
+</FIGHTERINFO>

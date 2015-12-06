@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UFC News Central</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/demo1.css" />
+	
+	</head>
+	<body>
+	<div class="navbar-static-top navbar-inverse" id="home">
+		
+		<div class="container">
+			<div class="navbar-brand">
+				<a href="index.html"><img src="images/logo.png" alt="Logo" height="30px"/></a>
+				</div>
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					List
+				</button>
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						
+					
+
+					</ul>	
+			</div>
+		</div>
+	</div>	
+	<div id="welcome"><h1 style="color:white">"Its Time!"</h1></div>
+	<div class="jumbotron">
+		
+		<div id="wrapper">
+<div style="color:white" class="callbacks_container">
+      <ul class="rslides" id="slider4">
+       
+        <li>
+          <img src="images/promo.jpg" alt="">
+          <p class="caption">Mcgreggor VS Aldo</p>
+        </li>
+        <li>
+          <img src="images/promo2.jpg" alt="">
+          <p class="caption">Lawler VS Condit</p>
+        </li>
+
+        
+        
+       
+      </ul>
+    </div>
+
+</div>
+	</div>
+	
+	<div class="alt1" >
+		<div id="space"></div>
+	<div class="container" >
+		<div class="row">
+			
+			
+			<div class="col-md-4">
+
+<!--script for RSS feed Ajax Reader using PHP-->
+<script>
+function showRSS(str) {
+  if (str.length==0) { 
+    document.getElementById("rssOutput").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("GET","getrss.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+
+
+
+<form>
+<select onchange="showRSS(this.value)">
+<option value="">Select an RSS-feed:</option>
+<option value="Google">Google News</option>
+<option value="NBC">NBC News</option>
+</select>
+</form>
+<br>
+<div id="rssOutput">RSS-feed will be listed here...</div>
+
+		
+			
+
+				</div>
+			</div>
+			
+			<div id="container3">
+			
+			<h2 class="text-center">Services</h2>
+			<p class="text-justify">We are a catering company that  specialises in catering for outdoor events , indoor events and venues. Sed eget arcu hendrerit, molestie lectus et, congue mauris. Donec justo metus, porta vitae ante vitae, porttitor tincidunt felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tincidunt massa. Etiam vel nulla tincidunt, fringilla libero nec, commodo massa. Curabitur sagittis fringilla ultricies. Vivamus magna risus, pharetra non tellus sit amet, fermentum efficitur lorem.</p>
+			</br>
+			</br>
+			</br>
+			
+		
+			</div>
+
+		
+
+		<div id="serv">
+		
+		 <style>
+				table,th,td {
+				  border : 1px solid black;
+				  border-collapse: collapse;
+				}
+				th,td {
+				  padding: 5px;
+				}
+				
+		</style>
+
+			<image id="upcoming"/>
+			<br/>
+
+			<br><br>
+		
+			<body onload="loadDates()">
+			<div id="holder">
+					</br>
+					<p6 style="background-color:red;font-weight:bold;"></p6>
+					</br>
+					<hr>
+					
+					<p10></p10>
+					</br>
+					<hr>
+					
+					<p7></p7>
+					</br>
+					<hr>
+					
+					<p8></p8>
+					</br>
+					<hr>
+					
+					<p9></p9>	
+			</div>		
+			</br>
+			<div id="buttons">
+			<image src="images/Previous.png" onclick="prev()" id="a"></image>
+			<image src="images/next1.png" onclick="next()" id="a"></image>
+			</div>			
+			
+			<!--script ajax accessing xml file fightInfo.xml-->
+			<script>
+			function loadDates() {
+				
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      
+
+			      loadFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "fighterInfo.xml", true);
+			  xhttp.send();
+			}
+			
+
+			function loadFunction(xml) {
+			  
+			  var x = xml.responseXML.getElementsByTagName("FIGHT");
+			  
+			  $("p6").html(x[0].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+				$("p7").html(x[0].getElementsByTagName("DATE")[0].childNodes[0].nodeValue);			  
+			  $("p8").html(x[0].getElementsByTagName("WEIGHT-CLASS")[0].childNodes[0].nodeValue);
+			  $("p9").html(x[0].getElementsByTagName("VENUE")[0].childNodes[0].nodeValue);
+			  $("p10").html(x[0].getElementsByTagName("FIGHTERS")[0].childNodes[0].nodeValue);
+			  
+			}
+			</script>
+
+
+
+			<script>	
+			var c=0;
+			function next() {
+				
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      
+
+			      nextFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "fighterInfo.xml", true);
+			  xhttp.send();
+			}
+			
+
+			function nextFunction(xml) {
+			   c=c+1;
+			   var x = xml.responseXML.getElementsByTagName("FIGHT");
+			  if(c==x.length){
+			  	c=0;
+			  }
+			  
+			  $("p6").html(x[c].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+				$("p7").html(x[c].getElementsByTagName("DATE")[0].childNodes[0].nodeValue);			  
+			  $("p8").html(x[c].getElementsByTagName("WEIGHT-CLASS")[0].childNodes[0].nodeValue);
+			  $("p9").html(x[c].getElementsByTagName("VENUE")[0].childNodes[0].nodeValue);
+			  $("P10").html(x[c].getElementsByTagName("FIGHTERS")[0].childNodes[0].nodeValue);
+			  
+			}
+			
+			
+				
+			function prev() {
+				
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      
+
+			      prevFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "fighterInfo.xml", true);
+			  xhttp.send();
+			}
+			
+
+			function prevFunction(xml) {
+			   c=c-1;
+			  var x = xml.responseXML.getElementsByTagName("FIGHT");
+			  if(c==0){
+			  	c=x.length;
+			  }
+			  
+			  $("p6").html(x[c].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+				$("p7").html(x[c].getElementsByTagName("DATE")[0].childNodes[0].nodeValue);			  
+			  $("p8").html(x[c].getElementsByTagName("WEIGHT-CLASS")[0].childNodes[0].nodeValue);
+			  $("p9").html(x[c].getElementsByTagName("VENUE")[0].childNodes[0].nodeValue);
+			  $("p10").html(x[c].getElementsByTagName("FIGHTERS")[0].childNodes[0].nodeValue);
+			  
+			}
+			</script>
+
+		</div>
+
+		<div id="condit">
+			<h2 class="text-center">Fight Results</h2>
+			<p class="text-justify"></p>
+			<p class="text-justify"></p>
+			
+			<button type="button" onclick="loadRes()" style="color:black;">UFC 193 Results</button>
+			<div id="results"></div>
+			
+
+				<script>
+				function loadRes() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "ajax_info.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+		</div>
+		</div>
+		</br>
+	</div>
+	</div>
+	<div class="alt2">
+		<div class="container">
+			<footer>&copy; UFC News Central<br /><a href="#home">Back to top</a></footer>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+   
+    $(function () {
+    	// Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: true,
+        fx: 'fade',
+		speed: 3500,
+		timeout: 4000,
+		pager: false,
+        nav: false,
+        
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+    });
+</script>
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+	</body>
+
+
+</html>

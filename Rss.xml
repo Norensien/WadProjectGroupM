@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+    <title>Upcoming UFC Fights</title>
+    <link>http://www.makeuseof.com/</link>
+    <description>Upcoming UFC fights</description>
+    <language>en-us</language>
+    <image>
+      <title>McGregor vs. Aldo</title>
+      <link> dad </link>
+      <url> dad</url>
+      <width>150<</width>
+      <height>124</height>
+    </image>
+  <item>
+    <title>Entry Title</title>
+    <pubDate> Sat 3 Oct 2009 14:33</pubDate>
+    <link>Link to the entry</link>
+    <description><![CDATA[ Visit this <a href=www.tinkernut.com">link </a> to my website! ]]> </description>
+    <author> admin@tinketnut.com</author>
+    <comments> http://www.tinketnut.com/1178#comments</comments>
+  </item>
+</channel>
+</rss>
