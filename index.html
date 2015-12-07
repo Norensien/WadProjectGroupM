@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="css/demo1.css" />
 	
 	</head>
-	<body>
+	<body onload="loadDates();load();">
 	<div class="navbar-static-top navbar-inverse" id="home">
 		
 		<div class="container">
@@ -21,7 +21,7 @@
 				<div class="collapse navbar-collapse navHeaderCollapse">
 					<ul class="nav navbar-nav navbar-right">
 						
-					
+						
 
 					</ul>	
 			</div>
@@ -39,8 +39,8 @@
           <p class="caption">Mcgreggor VS Aldo</p>
         </li>
         <li>
-          <img src="images/promo2.jpg" alt="">
-          <p class="caption">Lawler VS Condit</p>
+          <img src="images/promo2.png" alt="">
+          <p class="caption">Rousey VS Holm</p>
         </li>
 
         
@@ -88,12 +88,12 @@ function showRSS(str) {
 <form>
 <select onchange="showRSS(this.value)">
 <option value="">Select an RSS-feed:</option>
-<option value="Google">Google News</option>
+<option value="Google">UFC News</option>
 <option value="NBC">NBC News</option>
 </select>
 </form>
 <br>
-<div id="rssOutput">RSS-feed will be listed here...</div>
+<div id="rssOutput" style="color:white;">RSS-feed will be listed here...</div>
 
 		
 			
@@ -102,9 +102,9 @@ function showRSS(str) {
 			</div>
 			
 			<div id="container3">
-			
-			<h2 class="text-center">Services</h2>
-			<p class="text-justify">We are a catering company that  specialises in catering for outdoor events , indoor events and venues. Sed eget arcu hendrerit, molestie lectus et, congue mauris. Donec justo metus, porta vitae ante vitae, porttitor tincidunt felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a tincidunt massa. Etiam vel nulla tincidunt, fringilla libero nec, commodo massa. Curabitur sagittis fringilla ultricies. Vivamus magna risus, pharetra non tellus sit amet, fermentum efficitur lorem.</p>
+			</br>
+			<h2 class="text-center">UFC NEWS CENTRAL</h2>
+			<p class="text-justify">Bringing you headline news, upcoming fight schudeles and fight results.Please add your own local fights for others to see!!</p>
 			</br>
 			</br>
 			</br>
@@ -116,23 +116,14 @@ function showRSS(str) {
 
 		<div id="serv">
 		
-		 <style>
-				table,th,td {
-				  border : 1px solid black;
-				  border-collapse: collapse;
-				}
-				th,td {
-				  padding: 5px;
-				}
-				
-		</style>
+		
 
 			<image id="upcoming"/>
 			<br/>
 
 			<br><br>
 		
-			<body onload="loadDates()">
+			
 			<div id="holder">
 					</br>
 					<p6 style="background-color:red;font-weight:bold;"></p6>
@@ -156,7 +147,7 @@ function showRSS(str) {
 			</br>
 			<div id="buttons">
 			<image src="images/Previous.png" onclick="prev()" id="a"></image>
-			<image src="images/next1.png" onclick="next()" id="a"></image>
+			<image src="images/nextt.png" onclick="next()" id="a"></image>
 			</div>			
 			
 			<!--script ajax accessing xml file fightInfo.xml-->
@@ -257,18 +248,88 @@ function showRSS(str) {
 			</script>
 
 		</div>
+		</br>
+		</br>
+		
+		
+		<script>
+		
+					function load() {
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      myFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "studentdb.xml", true);
+			  xhttp.send();
+			}
+			function myFunction(xml) {
+			  var i;
+			  var xmlDoc = xml.responseXML;
+			  var table="<tr><th>Fighters</th><th>Location</th><th>Date</th></tr>";
+			  var x = xmlDoc.getElementsByTagName("INFO");
+			 for (i = 0; i <x.length; i++) {
+			    table += "<tr><td>" +
+			    x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue +
+			    "</td><td>" +
+			     x[i].getElementsByTagName("LOCATION")[0].childNodes[0].nodeValue +
+			    "</td><td>" +
+			     x[i].getElementsByTagName("NUMBER")[0].childNodes[0].nodeValue +
+			    "</td></tr>";
+			  }
+			  document.getElementById("demo").innerHTML = table;
+			  
+			}
+			</script>
+		
+		
+		<div id="local" style="color:white;">
+			
+				<div id="local2" >
+					<image id="locs"></image>
+					</br>
+					<table id="demo"></table>		
+				</div>
+				</br>
+				<div id="add">
+					<form method = "POST" action ="insertxml.php">
+            	<h2>Enter Local fights here</h2>
+            Enter names of fighters <input style="background-color:black;" type = "text" name = "c_name"></br>
+            Enter the location of fight <input style="background-color:black;" type="text" name="h_add"></br>
+            Enter the Date of the fight<input style="background-color:black;" type="text" name="n_add"></br>
+            <input id="addb" type = "submit" name="insert" value ="">
+        	</form>
+				
+				</div>
+				<div id="delete">
+					<form method="post" action="deletexml.php">
+            <h2>Delete a local fight here</h2> </br>
+            Enter the date of the fight <input style="background-color:black;" type="text" name="c_name"></br>
+            <input id="deleteb" type="submit" name="insert" value="">
+        </form>
+					
+				</div>
+			
+		</div>
 
 		<div id="condit">
-			<h2 class="text-center">Fight Results</h2>
+			<image id="recent"/>
 			<p class="text-justify"></p>
 			<p class="text-justify"></p>
 			
-			<button type="button" onclick="loadRes()" style="color:black;">UFC 193 Results</button>
+			<button type="button" onclick="loadRes1()" style="color:black;">UFC 193 Results</button>
+			<button type="button" onclick="loadRes2()" style="color:black;">UFC 192 Results</button>
+			<button type="button" onclick="loadRes3()" style="color:black;">UFC 191 Results</button>
+			<button type="button" onclick="loadRes4()" style="color:black;">UFC 190 Results</button>
+			<button type="button" onclick="loadRes5()" style="color:black;">UFC 189 Results</button>
+			</br>
+			</br>
 			<div id="results"></div>
 			
 
 				<script>
-				function loadRes() {
+				function loadRes1() {
 				  var xhttp = new XMLHttpRequest();
 				  xhttp.onreadystatechange = function() {
 				    if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -276,6 +337,58 @@ function showRSS(str) {
 				    }
 				  };
 				  xhttp.open("GET", "ajax_info.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes2() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "192.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes3() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "191.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes4() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "190.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes5() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "189.txt", true);
 				  xhttp.send();
 		
 				}

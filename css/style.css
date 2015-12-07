@@ -30,13 +30,22 @@ p4{
   border-radius: 25px;
   
 }
-
+table,th,td {
+				  border : 1px solid black;
+				  border-collapse: collapse;
+				}
+				th,td {
+				  padding: 5px;
+				}
+				th{
+					color:blue;
+				}
 #a:hover {
    			 opacity: 0.7;
     			filter: alpha(opacity=40); /* For IE8 and earlier */
 				}
 #buttons{
-  width:140px;
+  width:165px;
     display:block;
   margin-left:auto;
   margin-right:auto;
@@ -44,12 +53,91 @@ p4{
   
 }
 
+#local{
+  text-align:center;
+  margin-left:auto;
+  display:block;
+  margin:0 auto;
+  margin-right:auto;
+}
+#local2{
+  width:50%;
+  text-align:center;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin:0 auto;
+}
+#s{
+  background-color:orange;
+  min-width:22%;
+  height:1px;
+  float:left;
+}
+#f{
+  width:150px;
+  background-color:blue;
+  Float:left;
+}
+
+#l{
+  width:150px;
+  background-color:green;
+  float:left;
+  
+}
+
+#t{
+  width:150px;
+  background-color:yellow;
+  float:left;
+}
+
+#local{
+  margin-top:auto;
+}
 #condit,#serv{
   color:white;
   
 }
+#addb{
+  background-image:url(../images/add.png);
+  background-repeat:no-repeat;
+  background-color:transparent;
+  cursor: pointer;
+  border:none;
+  font-weight: bold;
+  height: 28px;
+  width: 80px;
+}
+#deleteb{
+  background-image:url(../images/delete.png);
+  background-repeat:no-repeat;
+  background-color:transparent;
+  cursor: pointer;
+  border:none;
+  font-weight: bold;
+  height: 28px;
+  width: 80px;
+}
 #upcoming{
   content:url(../images/button1.png);
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin:0 auto;
+  
+}
+#recent{
+  content:url(../images/recentresults.png);
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin:0 auto;
+  
+}
+#locs{
+  content:url(../images/local.png);
   display:block;
   margin-left:auto;
   margin-right:auto;

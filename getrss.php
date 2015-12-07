@@ -4,7 +4,7 @@ $q=$_GET["q"];
 
 //find out which feed was selected
 if($q=="Google") {
-  $xml=("Rss.xml");
+  $xml=("HTTPS://EXAMOPLE-NORENSIEN.C9USERS.IO/RSS.XML");
 } elseif($q=="NBC") {
   $xml=("http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml");
 }
