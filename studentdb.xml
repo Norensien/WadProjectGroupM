@@ -3,16 +3,17 @@
   <INFO>
     <NAME>Roco vs Chero</NAME>
     <LOCATION>The point village</LOCATION>
-    <NUMBER>07-12-2015</NUMBER>
+    <DATE>07-12-2015</DATE>
   </INFO>
   <INFO>
     <NAME>Petrokov vs jackson</NAME>
     <LOCATION>Joes gym</LOCATION>
-    <NUMBER>10-11-215</NUMBER>
+    <DATE>10-11-215</DATE>
   </INFO>
   <INFO>
     <NAME>Glenn vs Kelly</NAME>
     <LOCATION>Swords Manor</LOCATION>
-    <NUMBER>02-12-215</NUMBER>
+    <DATE>02-12-215</DATE>
   </INFO>
+  
 </ROOT>

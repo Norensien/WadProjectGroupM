@@ -275,7 +275,460 @@ function showRSS(str) {
 			    "</td><td>" +
 			     x[i].getElementsByTagName("LOCATION")[0].childNodes[0].nodeValue +
 			    "</td><td>" +
-			     x[i].getElementsByTagName("NUMBER")[0].childNodes[0].nodeValue +
+			     x[i].getElementsByTagName("DATE")[0].childNodes[0].nodeValue +
+			    "</td></tr>";
+			  }
+			  document.getElementById("demo").innerHTML = table;
+			  
+			}
+			</script>
+		
+		
+		<div id="local" style="color:white;">
+			
+				<div id="local2" >
+					<image id="locs"></image>
+					</br>
+					<table id="demo"></table>		
+				</div>
+				</br>
+				<div id="add">
+					<form method = "POST" action ="insertxml.php">
+            	<h2>Enter Local fights here</h2>
+            Enter names of fighters <input style="background-color:black;" type = "text" name = "c_name"></br>
+            Enter the location of fight <input style="background-color:black;" type="text" name="h_add"></br>
+            Enter the Date of the fight<input style="background-color:black;" type="text" name="n_add"></br>
+            <input id="addb" type = "submit" name="insert" value ="">
+        	</form>
+				
+				</div>
+				<div id="delete">
+					<form method="post" action="deletexml.php">
+            <h2>Delete a local fight here</h2> </br>
+            Enter the date of the fight <input style="background-color:black;" type="text" name="c_name"></br>
+            <input id="deleteb" type="submit" name="insert" value="">
+        </form>
+					
+				</div>
+			
+		</div>
+
+		<div id="condit">
+			<image id="recent"/>
+			<p class="text-justify"></p>
+			<p class="text-justify"></p>
+			
+			<button type="button" onclick="loadRes1()" style="color:black;">UFC 193 Results</button>
+			<button type="button" onclick="loadRes2()" style="color:black;">UFC 192 Results</button>
+			<button type="button" onclick="loadRes3()" style="color:black;">UFC 191 Results</button>
+			<button type="button" onclick="loadRes4()" style="color:black;">UFC 190 Results</button>
+			<button type="button" onclick="loadRes5()" style="color:black;">UFC 189 Results</button>
+			</br>
+			</br>
+			<div id="results"></div>
+			
+
+				<script>
+				function loadRes1() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "ajax_info.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes2() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "192.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes3() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "191.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes4() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "190.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+				<script>
+				function loadRes5() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+				    if (xhttp.readyState == 4 && xhttp.status == 200) {
+				      document.getElementById("results").innerHTML = xhttp.responseText;
+				    }
+				  };
+				  xhttp.open("GET", "189.txt", true);
+				  xhttp.send();
+		
+				}
+				</script>
+		</div>
+		</div>
+		</br>
+	</div>
+	</div>
+	<div class="alt2">
+		<div class="container">
+			<footer>&copy; UFC News Central<br /><a href="#home">Back to top</a></footer>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+   
+    $(function () {
+    	// Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: true,
+        fx: 'fade',
+		speed: 3500,
+		timeout: 4000,
+		pager: false,
+        nav: false,
+        
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+    });
+</script>
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+	</body>
+
+
+</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UFC News Central</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/demo1.css" />
+	
+	</head>
+	<body onload="loadDates();load();">
+	<div class="navbar-static-top navbar-inverse" id="home">
+		
+		<div class="container">
+			<div class="navbar-brand">
+				<a href="index.html"><img src="images/logo.png" alt="Logo" height="30px"/></a>
+				</div>
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+					List
+				</button>
+				<div class="collapse navbar-collapse navHeaderCollapse">
+					<ul class="nav navbar-nav navbar-right">
+						
+						
+
+					</ul>	
+			</div>
+		</div>
+	</div>	
+	<div id="welcome"><h1 style="color:white">"Its Time!"</h1></div>
+	<div class="jumbotron">
+		
+		<div id="wrapper">
+<div style="color:white" class="callbacks_container">
+      <ul class="rslides" id="slider4">
+       
+        <li>
+          <img src="images/promo.jpg" alt="">
+          <p class="caption">Mcgreggor VS Aldo</p>
+        </li>
+        <li>
+          <img src="images/promo2.png" alt="">
+          <p class="caption">Rousey VS Holm</p>
+        </li>
+
+        
+        
+       
+      </ul>
+    </div>
+
+</div>
+	</div>
+	
+	<div class="alt1" >
+		<div id="space"></div>
+	<div class="container" >
+		<div class="row">
+			
+			
+			<div class="col-md-4">
+
+<!--script for RSS feed Ajax Reader using PHP-->
+<script>
+function showRSS(str) {
+  if (str.length==0) { 
+    document.getElementById("rssOutput").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("rssOutput").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("GET","getrss.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+
+
+
+<form>
+<select onchange="showRSS(this.value)">
+<option value="">Select an RSS-feed:</option>
+<option value="Google">UFC News</option>
+<option value="NBC">NBC News</option>
+</select>
+</form>
+<br>
+<div id="rssOutput" style="color:white;">RSS-feed will be listed here...</div>
+
+		
+			
+
+				</div>
+			</div>
+			
+			<div id="container3">
+			</br>
+			<h2 class="text-center">UFC NEWS CENTRAL</h2>
+			<p class="text-justify">Bringing you headline news, upcoming fight schudeles and fight results.Please add your own local fights for others to see!!</p>
+			</br>
+			</br>
+			</br>
+			
+		
+			</div>
+
+		
+
+		<div id="serv">
+		
+		
+
+			<image id="upcoming"/>
+			<br/>
+
+			<br><br>
+		
+			
+			<div id="holder">
+					</br>
+					<p6 style="background-color:red;font-weight:bold;"></p6>
+					</br>
+					<hr>
+					
+					<p10></p10>
+					</br>
+					<hr>
+					
+					<p7></p7>
+					</br>
+					<hr>
+					
+					<p8></p8>
+					</br>
+					<hr>
+					
+					<p9></p9>	
+			</div>		
+			</br>
+			<div id="buttons">
+			<image src="images/Previous.png" onclick="prev()" id="a"></image>
+			<image src="images/nextt.png" onclick="next()" id="a"></image>
+			</div>			
+			
+			<!--script ajax accessing xml file fightInfo.xml-->
+			<script>
+			function loadDates() {
+				
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      
+
+			      loadFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "fighterInfo.xml", true);
+			  xhttp.send();
+			}
+			
+
+			function loadFunction(xml) {
+			  
+			  var x = xml.responseXML.getElementsByTagName("FIGHT");
+			  
+			  $("p6").html(x[0].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+				$("p7").html(x[0].getElementsByTagName("DATE")[0].childNodes[0].nodeValue);			  
+			  $("p8").html(x[0].getElementsByTagName("WEIGHT-CLASS")[0].childNodes[0].nodeValue);
+			  $("p9").html(x[0].getElementsByTagName("VENUE")[0].childNodes[0].nodeValue);
+			  $("p10").html(x[0].getElementsByTagName("FIGHTERS")[0].childNodes[0].nodeValue);
+			  
+			}
+			</script>
+
+
+
+			<script>	
+			var c=0;
+			function next() {
+				
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      
+
+			      nextFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "fighterInfo.xml", true);
+			  xhttp.send();
+			}
+			
+
+			function nextFunction(xml) {
+			   c=c+1;
+			   var x = xml.responseXML.getElementsByTagName("FIGHT");
+			  if(c==x.length){
+			  	c=0;
+			  }
+			  
+			  $("p6").html(x[c].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+				$("p7").html(x[c].getElementsByTagName("DATE")[0].childNodes[0].nodeValue);			  
+			  $("p8").html(x[c].getElementsByTagName("WEIGHT-CLASS")[0].childNodes[0].nodeValue);
+			  $("p9").html(x[c].getElementsByTagName("VENUE")[0].childNodes[0].nodeValue);
+			  $("P10").html(x[c].getElementsByTagName("FIGHTERS")[0].childNodes[0].nodeValue);
+			  
+			}
+			
+			
+				
+			function prev() {
+				
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      
+
+			      prevFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "fighterInfo.xml", true);
+			  xhttp.send();
+			}
+			
+
+			function prevFunction(xml) {
+			   c=c-1;
+			  var x = xml.responseXML.getElementsByTagName("FIGHT");
+			  if(c==0){
+			  	c=x.length;
+			  }
+			  
+			  $("p6").html(x[c].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+				$("p7").html(x[c].getElementsByTagName("DATE")[0].childNodes[0].nodeValue);			  
+			  $("p8").html(x[c].getElementsByTagName("WEIGHT-CLASS")[0].childNodes[0].nodeValue);
+			  $("p9").html(x[c].getElementsByTagName("VENUE")[0].childNodes[0].nodeValue);
+			  $("p10").html(x[c].getElementsByTagName("FIGHTERS")[0].childNodes[0].nodeValue);
+			  
+			}
+			</script>
+
+		</div>
+		</br>
+		</br>
+		
+		
+		<script>
+		
+					function load() {
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			      myFunction(xhttp);
+			    }
+			  };
+			  xhttp.open("GET", "studentdb.xml", true);
+			  xhttp.send();
+			}
+			function myFunction(xml) {
+			  var i;
+			  var xmlDoc = xml.responseXML;
+			  var table="<tr><th>Fighters</th><th>Location</th><th>Date</th></tr>";
+			  var x = xmlDoc.getElementsByTagName("INFO");
+			 for (i = 0; i <x.length; i++) {
+			    table += "<tr><td>" +
+			    x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue +
+			    "</td><td>" +
+			     x[i].getElementsByTagName("LOCATION")[0].childNodes[0].nodeValue +
+			    "</td><td>" +
+			     x[i].getElementsByTagName("DATE")[0].childNodes[0].nodeValue +
 			    "</td></tr>";
 			  }
 			  document.getElementById("demo").innerHTML = table;

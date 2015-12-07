@@ -15,7 +15,7 @@ if(isset($_POST['insert'])){
     $infoTag = $xml->createElement("INFO");
         $nameTag = $xml->createElement("NAME", $cname);
         $addTag = $xml->createElement("LOCATION", $hadd);
-        $numTag = $xml->createElement("NUMBER", $nadd);
+        $numTag = $xml->createElement("DATE", $nadd);
         
         $infoTag->appendChild($nameTag);
         $infoTag->appendChild($addTag);
